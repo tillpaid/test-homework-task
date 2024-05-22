@@ -1,18 +1,18 @@
 package checkers
 
 type OneOfChecker struct {
-	ExpectedList  []int
-	SuccessResult string
+	expectedList  []int
+	successResult string
 }
 
 func NewOneOfChecker(expectedList []int, successResult string) *OneOfChecker {
-	return &OneOfChecker{ExpectedList: expectedList, SuccessResult: successResult}
+	return &OneOfChecker{expectedList: expectedList, successResult: successResult}
 }
 
 func (c *OneOfChecker) Check(number int) string {
-	for _, expected := range c.ExpectedList {
+	for _, expected := range c.expectedList {
 		if number == expected {
-			return c.SuccessResult
+			return c.successResult
 		}
 	}
 

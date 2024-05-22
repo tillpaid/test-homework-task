@@ -7,14 +7,16 @@ import (
 )
 
 func main() {
-	fmt.Println("Task v1:")
-	fmt.Println(getFirstTask().Process())
+	tasks := []*models.Task{
+		getFirstTask(),
+		getSecondTask(),
+		getThirdTask(),
+	}
 
-	fmt.Println("Task v2:")
-	fmt.Println(getSecondTask().Process())
-
-	fmt.Println("Task v3:")
-	fmt.Println(getThirdTask().Process())
+	for i, task := range tasks {
+		fmt.Printf("Task v%d:\n", i+1)
+		fmt.Println(task.Process())
+	}
 }
 
 func getFirstTask() *models.Task {

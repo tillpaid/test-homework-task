@@ -1,17 +1,17 @@
 package checkers
 
 type DivisionChecker struct {
-	Divisor       int
-	SuccessResult string
+	divisor       int
+	successResult string
 }
 
 func NewDivisionChecker(divisor int, successResult string) *DivisionChecker {
-	return &DivisionChecker{Divisor: divisor, SuccessResult: successResult}
+	return &DivisionChecker{divisor: divisor, successResult: successResult}
 }
 
 func (c *DivisionChecker) Check(number int) string {
-	if number%c.Divisor == 0 {
-		return c.SuccessResult
+	if number%c.divisor == 0 {
+		return c.successResult
 	}
 
 	return ""
